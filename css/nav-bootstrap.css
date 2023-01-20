@@ -1,0 +1,249 @@
+/*
+    DEMO STYLE
+*/
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+.wrapper{
+    display: none;
+}
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: #24292f;
+    box-shadow: 2px 2px 10px #bbb;
+    height: 65px;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100vh;
+    z-index: 999;
+    background: white;
+    color:#233d4d;
+    transition: all 0.3s;
+    overflow-y: scroll;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+    left: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #24292f;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    /* border: 1px solid #ffffff; */
+    border: none;
+    font-size: 24px;
+}
+
+/* #dismiss:hover {
+    background: #fff;
+    color: #233d4d;
+} */
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+.components i {
+    font-size: 15px;
+    padding-left: 5px;
+}
+.components li a {
+    color: #ffffff;
+}
+.components{
+    padding-inline: 10px;
+    margin-inline: 10px;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #24292f;
+    background: #fff;
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: 100%;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#sidebarCollapse{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 2%;
+    background-color: #24292f;
+    /* border: 1px solid #ffffff; */
+    border: none !important;
+    font-size: 30px;
+}
+/* .my-nav-items li a{
+    color: #233d4d;
+    text-decoration: none;
+} */
+.mCustomScrollBox {
+    background-color: #24292f;
+}
+.container-fluid{
+    display: flex;
+}
+.container-fluid form{
+    display: flex;
+    position: absolute;
+    width: 80%;
+}
+
+.srch-btn, .close-btn{
+    padding-inline: 5px;
+    position: absolute;
+    right: 15%;
+    border: none;
+    background: none;
+    color: #c8c9cb;
+    cursor: pointer;
+    font-size: 24px;
+    outline: none;
+    z-index: 100;
+}
+.close-btn{
+    display: none;
+}
+.close-btn.show-close{
+    display: block;
+    right: 3%;
+}
+.container-fluid form{
+    display: none;
+}
+.container-fluid form.show-srch{
+    display: flex;
+}

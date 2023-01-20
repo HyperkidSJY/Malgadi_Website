@@ -1,0 +1,126 @@
+
+.ec-footer{
+    padding: 3%;
+    font-family: 'Poppins';
+    min-height: 50vh;
+    background-color: #24292f;
+    display: flex;
+    justify-content: space-between;
+}
+.des{
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    width: 50%;
+}
+.cpy{
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    color: white;
+    font-weight: bolder;
+}
+.f-logo img{
+    width: 70px;
+    height: 55px;
+    margin-left: 25%;
+}
+.f-logo{
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+}
+.ec-footer-container{
+    position: relative;
+}
+.f-item a{
+    color: white;
+    font-weight: bolder;
+}
+.f-item a:hover{
+    color:  rgba(255,255,255,0.6);
+}
+.ec-footer ul{
+    padding: 5px;
+    margin: 5px;
+    line-height: 30px;
+}
+.links{
+    padding: 5px;
+    margin: 5px;
+}
+.social-links h3{
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    text-align: right;
+}
+.social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+.links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.links a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width:770px){
+    .ec-footer{
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .des{
+        width: 100%;
+        grid-row-start: 1;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .ec-footer ul {
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width:550px){
+    .ec-footer ul {
+        margin-bottom: 60px;
+    }
+    .social-links h3{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:434px){
+    .ec-footer ul {
+        margin-bottom: 60px;
+    }
+    .social-links h3{
+        font-size: 15px;
+    }
+    .social-links a{
+        width: 30px;
+        height: 30px;
+    }
+    .ec-footer ul li a{
+        font-size: 15px;
+    }
+    .des{
+        font-size: 15px;
+    }
+}
+
+
