@@ -10,7 +10,7 @@ html,body{
     height: 100%;
     width: 100%;
     place-items: center;
-    background: -webkit-linear-gradient(left, #c83853, white, #c83853);
+    /* background: -webkit-linear-gradient(left, #c83853, white, #c83853); */
 }
 .container{
     max-width: 390px !important;
@@ -18,7 +18,8 @@ html,body{
     padding: 30px;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 50%);
+    border: 1px solid #c83853;
 }
 
 .container .titletext{

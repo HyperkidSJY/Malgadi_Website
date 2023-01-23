@@ -14,7 +14,7 @@
 <body>
     
     <?php ob_start(); 
-    include("../includes/nav.php") ?>
+     ?>
 
     <div class="container">
         <div class="titletext">
@@ -132,7 +132,7 @@ if (isset($_POST['login'])) {
                     $_SESSION['loggedin'] = true;
                     $_SESSION['mobile'] = $mobile;
                     $_SESSION['fname'] = $row['fname'];
-                    $_SESSION['userId'] = $row['id'];
+                    $_SESSION['userId'] = $row['IuserId'];
 
                     //setting cookies
                     setcookie("mobile", $row['mobile'], time() + (86400 * 30)); 
@@ -182,8 +182,10 @@ if (isset($_POST['signup'])) {
                 $result = mysqli_query($link, $sql);
                 if ($result){
                     $showAlert = true;
+                    setcookie("mobile", $mobile, time() + (86400 * 30)); 
+                    setcookie("pass", $password, time() + (86400 * 30));
                     echo '<script>confirm("You are successfully Registered!");
-                    window.location.href="http://localhost/Malgadi_Merged/home/index.php"; 
+                    window.location.href="http://localhost/Malgadi_Merged/home/authorize.php"; 
                     </script>';
                 }else{
                     echo mysqli_error($link);
