@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +8,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/ec-footer.css">
 </head>
+
 <body>
-<div class="ec-footer-container">
+
+    <div class="ec-footer-container">
         <footer class="ec-footer">
             <ul>
                 <li class="f-item"><a href="./reviews.php">Reviews</a></li>
                 <li class="f-item"><a href="./contact.php">Contact Us</a></li>
                 <li class="f-item"><a href="./review.php">Review Us</a></li>
-                <li class="f-item"><a href="../home/about.php">About Us</a></li>
+                <li class="f-item"><a href="../about.php">About Us</a></li>
             </ul>
             <div class="social-links">
                 <h3>Connect with us on: </h3>
@@ -27,10 +30,13 @@
             <p class="des">Malgadi is a for the students, by the student's venture. It is a non-profitable organization
                 started by the college students to provide better quality electronic components at a reasonable rate.
             </p>
-            
-            <p class="cpy">&#169; 2022 Malgadi</p>
-        </footer>
 
+            <p class="cpy">&#169; 2022 Malgadi</p>
+
+        </footer>
+        <p class="web-team">Developed and Powered by <a href="../Web Team/teampage.html">@"TeamName"</a></p>
+       
     </div>
 </body>
+
 </html>

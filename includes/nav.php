@@ -22,31 +22,31 @@
 <body>
     <nav class="my-navbar">
         <div class="logo">
-            <a href="../home/index.php"><img src="../photos/home-logo.png" alt=""></a>
+            <a href="../index.php"><img src="../photos/home-logo.png" alt=""></a>
         </div>
-        <form action="search.php">
-            <input type="search" name="" id="search" placeholder="Search for items...">
+        <form action="../electronics/search.php" method="get">
+            <input type="search" name="q" id="search" placeholder="Search for items...">
             <button><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
         <ul>
             <li class="drop"><a role="link" aria-disabled="true">Categories<i class="fa fa-caret-down" aria-hidden="true"></i></a>
                 <ul class="drop-items">
-                    <li class="d-item"><a href="">Basic Components</a></li>
-                    <li class="d-item"><a href="">Robotics</a></li>
-                    <li class="d-item"><a href="">Controllers</a></li>   
-                    <li class="d-item"><a href="">Sensors</a></li>   
-                    <li class="d-item"><a href="">IC</a></li>   
-                    <li class="d-item"><a href="">Kits</a></li>   
-                    <li class="d-item"><a href="">EG Kits</a></li>   
+                    <li class="d-item"><a href="category.php?q=Basic Components">Basic Components</a></li>
+                    <li class="d-item"><a href="category.php?q=Robotics">Robotics</a></li>
+                    <li class="d-item"><a href="category.php?q=Controllers">Controllers</a></li>   
+                    <li class="d-item"><a href="category.php?q=Sensors">Sensors</a></li>   
+                    <li class="d-item"><a href="category.php?q=IC">IC</a></li>   
+                    <li class="d-item"><a href="category.php?q=Kits">Kits</a></li>   
+                    <li class="d-item"><a href="category.php?q=EG Kits">EG Kits</a></li>   
                 </ul>
             </li>
         </ul>
         <div class="my-nav-items">
             <ul>
-                <li class="item"><a href="">Home</a></li>
-                <li class="item"><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
-                <li class="item"><a href=""><i class="fa fa-truck fa-flip-horizontal"></i>Track Order</a></li>
-                <li class="item"><a href="">Special Order</a></li>
+                <li class="item"><a href="../electronics/electronics.php">Home</a></li>
+                <li class="item"><a href="../electronics/showCart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
+                <li class="item"><a href="../electronics/orders.php"><i class="fa fa-truck fa-flip-horizontal"></i>Your Orders</a></li>
+                <li class="item"><a href="../electronics/specialOrder.php">Special Order</a></li>
             </ul>
         </div>
         
@@ -60,42 +60,48 @@
             </div>
 
             <div class="side-logo">
-                <a href="../home/index.php"><img src="../photos/home-logo.png" alt=""></a>
+                <a href="../index.php"><img src="../photos/home-logo.png" alt=""></a>
             </div>
 
             <ul class="list-unstyled components">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                <li><a href="#">Track Order<i class="fa fa-truck"></i></a></li>
-                <li><a href="#">Special Order</a></li>
+                <li><a href="../electronics/electronics.php">Home</a></li>
+                <li><a href="../electronics/showCart.php">Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                <li><a href="../electronics/orders.php">Your Orders<i class="fa fa-truck"></i></a></li>
+                <li><a href="../electronics/specialOrder.php">Special Order</a></li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Categories<i class="fa fa-caret-down" aria-hidden="true"></i></a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Basic Components</a>
+                            <a href="category.php?q=Basic Components">Basic Components</a>
                         </li>
                         <li>
-                            <a href="#">Robotics</a>
+                            <a href="category.php?q=Robotics">Robotics</a>
                         </li>
                         <li>
-                            <a href="#">Controllers</a>
+                            <a href="category.php?q=Controllers">Controllers</a>
                         </li>
                         <li>
-                            <a href="#">Sensors</a>
+                            <a href="category.php?q=Sensors">Sensors</a>
                         </li>
                         <li>
-                            <a href="#">I.C</a>
+                            <a href="category.php?q=IC">I.C</a>
                         </li>
                         <li>
-                            <a href="#">Kits</a>
+                            <a href="category.php?q=Kits">Kits</a>
                         </li>
                         <li>
-                            <a href="#">E.G Kits</a>
+                            <a href="category.php?q=EG Kits">E.G Kits</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="../electronics/review.php">Review Us</a>
+                </li>
+                <li>
+                    <a href="../electronics/reviews.php">Reviews</a>
+                </li>
+                <li>
+                    <a href="../electronics/contact.php">Contact Us</a>
                 </li>
             </ul>
         </nav>
@@ -106,10 +112,10 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container-fluid">
                     <div class="logo">
-                        <a href="../home/index.php"><img src="../photos/home-logo.png" alt=""></a>
+                        <a href="../index.php"><img src="../photos/home-logo.png" alt=""></a>
                     </div>
                     <form action="search.php">
-                        <input type="search" name="" id="search" placeholder="Search for items...">
+                        <input type="search" name="q" id="search" placeholder="Search for items...">
                     </form>
                     <button class="srch-btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                     <button class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -124,7 +130,8 @@
     <!-- <div class="overlay"></div> -->
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!-- Popper.JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->

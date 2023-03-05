@@ -1,4 +1,8 @@
-
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .ec-footer{
     padding: 3%;
     font-family: 'Poppins';
@@ -15,7 +19,7 @@
 }
 .cpy{
     position: absolute;
-    bottom: 10%;
+    bottom: 12%;
     right: 5%;
     color: white;
     font-weight: bolder;
@@ -31,6 +35,7 @@
     left: 2%;
 }
 .ec-footer-container{
+    margin-top: auto;
     position: relative;
 }
 .f-item a{
@@ -80,6 +85,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.web-team{
+    background-color: #24292f;
+    margin: 0;
+    text-align: center;
+    color: white;
+    padding: 8px 10px;
+}
+.web-team a{
+    text-decoration: underline;
 }
 @media screen and (max-width:770px){
     .ec-footer{

@@ -34,7 +34,8 @@ a:focus {
     height: 65px;
     width: 100%;
     z-index: 10;
-    position: fixed;
+    /* position: fixed; */
+    position: sticky;
     top: 0;
     justify-content: space-between;
 }
@@ -191,9 +192,9 @@ a.download {
 #content {
     width: 100%;
     transition: all 0.3s;
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    right: 0;
+    right: 0; */
 }
 #sidebarCollapse{
     display: flex;

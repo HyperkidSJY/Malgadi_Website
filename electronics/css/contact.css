@@ -334,10 +334,6 @@ textarea.input {
   .social-media {
     padding: 1.5rem 0 0 0;
   }
-  .container{
-    top: 65px;
-  margin-bottom: 56px;
-  }
 }
 
 @media (max-width: 480px) {

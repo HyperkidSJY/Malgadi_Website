@@ -1,3 +1,33 @@
+<?php
+include '../dbConnect/config.php';
+session_start();
+if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
+    header("location: ../authorize.php");
+    exit();
+}
+if(isset($_POST['contact'])){
+  if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+  
+    $sql = "INSERT INTO `contact` (`name`, `email`,`phone`,`message`) VALUES('$name','$email','$phone','$message')";
+    $result = mysqli_query($link,$sql);
+    if($result){
+      echo '<script>alert("Message received! We will shortly contact you.");
+      window.history.back();
+      </script>';
+    }else{
+      echo '<script>alert("Message not received. Try again");
+      window.history.back();
+      </script>';
+  
+    }
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,15 +53,15 @@
 
           <div class="info">
             <div class="information">
-              <img src="img/location.png" class="icon" alt="" />
+              <img src="./photos/location.png" class="icon" alt="" />
               <p>Dharmsinh Desai University, Nadiad</p>
             </div>
             <div class="information">
-              <img src="img/email.png" class="icon" alt="" />
+              <img src="./photos/email.png" class="icon" alt="" />
               <p>malgadi.in</p>
             </div>
             <div class="information">
-              <img src="img/phone.png" class="icon" alt="" />
+              <img src="./photos/phone.png" class="icon" alt="" />
               <p>123-456-789</p>
             </div>
           </div>
@@ -41,7 +71,7 @@
           <span class="circle one"></span>
           <span class="circle two"></span>
 
-          <form action="index.html" autocomplete="off">
+          <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" autocomplete="off">
             <h3 class="title">Send us a message!</h3>
             <div class="input-container">
               <input type="text" name="name" class="input" />
@@ -63,7 +93,7 @@
               <label for="">✏️Write us a message...</label>
               <span>✏️Write us a message...</span>
             </div>
-            <input type="submit" value="Send" class="btn" />
+            <input type="submit" name="contact" value="Send" class="btn" />
           </form>
         </div>
       </div>
