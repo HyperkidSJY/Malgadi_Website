@@ -19,7 +19,7 @@ $userId = $_SESSION['userId'];
     <link rel="stylesheet" href="./css/showCart.css">
 </head>
 <body>
-    <?php include("../includes/ec-nav.php") ?>
+    <?php include("../includes/bk-nav.php") ?>
     <div class="cart-container">
         <div class="item-container">
             <?php
@@ -111,7 +111,7 @@ $userId = $_SESSION['userId'];
             </div>
         </div> <?php } ?>
     </div>
-    <?php include("../includes/ec-footer.php") ?>
+    <?php include("../includes/bk-footer.php") ?>
    <script>
         function updateCart(id) {
                 console.log("ENTER");

@@ -33,7 +33,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
     }
 </style>
 <body>
-    <?php include("../includes/ec-nav.php"); ?>
+    <?php include("../includes/bk-nav.php"); ?>
     <center>
         <h3 class="m-4">Your Orders</h3>
     </center>
@@ -89,7 +89,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
         </div>
     <?php $c++; } ?>
     </div><br><br><br>
-    <?php include("../includes/ec-footer.php"); ?>
+    <?php include("../includes/bk-footer.php"); ?>
 </body>
 
 </html>

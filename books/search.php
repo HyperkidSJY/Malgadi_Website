@@ -32,7 +32,7 @@
 <body>
     <?php 
         ob_start();
-        include "../includes/ec-nav.php";
+        include "../includes/bk-nav.php";
         $keywords = "";
         if(isset($_GET['q'])){
             header("electronics.php");
@@ -79,6 +79,6 @@
         document.querySelector(".no-results").style.display="block";
     </script>
     <?php }?>
-    <?php include "../includes/ec-footer.php"?>
+    <?php include "../includes/bk-footer.php"?>
 </body>
 </html>

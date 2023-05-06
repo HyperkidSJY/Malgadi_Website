@@ -41,7 +41,7 @@ if(isset($_POST['contact'])){
     ></script>
   </head>
   <body>
-  <?php require '../includes/ec-nav.php'; ?>
+  <?php require '../includes/bk-nav.php'; ?>
     <div class="container">
       <div class="form">
         <div class="contact-info">
@@ -98,7 +98,7 @@ if(isset($_POST['contact'])){
         </div>
       </div>
     </div>
-    <?php include "../includes/ec-footer.php" ?>
+    <?php include "../includes/bk-footer.php" ?>
     <script src="./js/contact.js"></script>
   </body>
 </html>

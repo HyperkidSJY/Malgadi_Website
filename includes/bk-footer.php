@@ -8,7 +8,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/footer.css">
 </head>
-
+<style>
+    .ec-footer{
+        background-color: #151C35;
+    }
+    .ec-footer-container > p{
+        background-color: #151C35;
+    }
+</style>
 <body>
 
     <div class="ec-footer-container">

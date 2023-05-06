@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electronics - Malgadi</title>
+    <title>Books - Malgadi</title>
     <link rel="stylesheet" href="./css/electronics.css">
     <!-- <link rel="stylesheet" href="../css/loader.css"> -->
     
 </head>
 <body>
     <?php
-    require '../includes/ec-nav.php'; ?>
+    require '../includes/bk-nav.php'; ?>
     <!-- <div class="ec-loader">
     </div> -->
     <div id="container" class="v-class">
@@ -51,7 +51,7 @@
             $sql = 'SELECT * FROM items WHERE homepage=1';
             include("./includes/cards.php");?>
 
-    <?php include "../includes/ec-footer.php" ?>
+    <?php include "../includes/bk-footer.php" ?>
     <!-- Script for scroll top and page loader  -->
     <script src="../js/loader.js"></script>
 

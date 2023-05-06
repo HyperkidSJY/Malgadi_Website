@@ -25,7 +25,7 @@ if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
 </head>
 
 <body>
-    <?php include("../includes/ec-nav.php"); ?>
+    <?php include("../includes/bk-nav.php"); ?>
     <?php 
         $userId = $_SESSION['userId'];
         $sql = "SELECT * FROM orders WHERE userId = '$userId' ORDER BY id DESC LIMIT 1";
@@ -78,7 +78,7 @@ if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
             </form>
         </div>
     </div>
-    <?php include("../includes/ec-footer.php"); ?>
+    <?php include("../includes/bk-footer.php"); ?>
 </body>
 
 </html>

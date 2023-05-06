@@ -172,9 +172,6 @@
                     },
                     success: function(response){
                         $('#message').html(response);
-                        window.setTimeout(function() {
-                            $('.alert').hide();
-                        }, 1500);
                         load_cart_item_number();
                     }
                 });

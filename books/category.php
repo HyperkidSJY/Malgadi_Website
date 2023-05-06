@@ -17,7 +17,7 @@
 </style>
 <body>
     <?php 
-        include "../includes/ec-nav.php";
+        include "../includes/bk-nav.php";
         $category = $_GET['q'];
     ?>
     
@@ -33,6 +33,6 @@
         ?>
             
     </div>
-    <?php include "../includes/ec-footer.php" ?>
+    <?php include "../includes/bk-footer.php" ?>
 </body>
 </html>

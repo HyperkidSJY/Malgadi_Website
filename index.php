@@ -59,7 +59,7 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
         </p>
         <div class="btns-home">
           <a href="./electronics/electronics.php"><button type="button"><span></span>ELECTRONICS</button></a>
-          <a href=""><button type="button"><span></span>BOOKS</button></a>
+          <a href="./books/books.php"><button type="button"><span></span>BOOKS</button></a>
         </div>
         
       </div>

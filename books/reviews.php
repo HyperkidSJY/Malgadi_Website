@@ -10,10 +10,14 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./css/reviews.css">
 </head>
-
+<style>
+  .board{
+    background-color: #24292f;
+  }
+</style>
 <body>
   <?php include("../dbConnect/config.php");
-  include("../includes/ec-nav.php");
+  include("../includes/bk-nav.php");
   ?>
   <div class="container">
     <div class="board">
@@ -54,7 +58,7 @@
 
     </div>
   </div>
-  <?php include("../includes/ec-footer.php"); ?>
+  <?php include("../includes/bk-footer.php"); ?>
   <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="./js/reviews.js"></script>
 </body>
