@@ -39,7 +39,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
     </center>
     <?php
     $userId = $_SESSION['userId'];
-    $sql = "SELECT * FROM orders WHERE userId = $userId";
+    $sql = "SELECT * FROM orders_books WHERE userId = $userId";
     $result = mysqli_query($link, $sql);
     $rows = mysqli_num_rows($result);
     if($rows==0){
@@ -57,10 +57,10 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
         for($i = 0; $i < sizeof($contentArray) ;$i++){
 
             $contentArray[$i] = explode(".", $contentArray[$i]);
-            $s = "SELECT `fullName` FROM items WHERE `itemId`=".$contentArray[$i][0]."";
+            $s = "SELECT `name` FROM books WHERE `bookId`=".$contentArray[$i][0]."";
             $res = mysqli_query($link,$s);
             $row2 = mysqli_fetch_assoc($res);
-            $contents .= $row2['fullName']." <b>X ".$contentArray[$i][1]."</b><br>";
+            $contents .= $row2['name']." <b>X ".$contentArray[$i][1]."</b><br>";
         }
         ?>
         <div class="card">
@@ -83,6 +83,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
                         <li class="list-group-item"><b>Br/Sem :&nbsp;</b><?php echo $row['branch']; ?>/<?php echo $row['semester']; ?></li>
                         <li class="list-group-item"><b>Contents :&nbsp;</b><br><?php echo $contents; ?></li>
                         <li class="list-group-item"><b>Amount :&nbsp;</b>Rs. <?php echo $row['amount']; ?></li>
+                        <li class="list-group-item"><b>Type :&nbsp;</b><?php echo $row['type']; ?></li>
                     </ul>
                 </div>
             </div>

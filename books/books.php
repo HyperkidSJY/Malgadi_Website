@@ -24,7 +24,7 @@
                 <div class="carousel-item active">
                     <img class="d-block single c1" src="photos/1.png" alt="First slide">
                     <div class="carousel-caption d-md-block caption-1">
-                        <h2>Malgadi<br>Electronics</h2> 
+                        <h2>Malgadi<br>Books</h2> 
                         <p class="motto"><i>You Demand, We Deliver</i></p> 
                     </div>
                 </div>
@@ -48,7 +48,7 @@
     <p id="message"></p>
     <div class="cards-container">
         <?php 
-            $sql = 'SELECT * FROM items WHERE homepage=1';
+            $sql = 'SELECT * FROM books WHERE homepage=1';
             include("./includes/cards.php");?>
 
     <?php include "../includes/bk-footer.php" ?>

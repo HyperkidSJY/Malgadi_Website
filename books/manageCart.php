@@ -13,16 +13,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // For ADD TO CART
     $userId = $_SESSION['userId'];
     $email = $_SESSION['email'];
-    if(isset($_POST['addItem'])) {
-        $itemId = $_POST["itemId"];
+    if(isset($_POST['addBook'])) {
+        $bookId = $_POST["bookId"];
         $image_path = $_POST['path'];
         // Check whether this item exists
-        $existSql = "SELECT * FROM `viewcart` WHERE itemId = '$itemId' AND `userId`='$userId'";
+        $existSql = "SELECT * FROM `viewcart_books` WHERE `bookId` = '$bookId' AND `userId`='$userId'";
         $result = mysqli_query($link, $existSql);
         $numExistRows = mysqli_num_rows($result);
         if($numExistRows > 0){
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Item already added in Cart</strong>
+                <strong>Book already added in Cart</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -30,11 +30,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         // If not added then add to cart.
         else{
-            $sql = "INSERT INTO `viewcart` (`itemId`, `userId`,`image_path`, `itemQuantity`) VALUES ('$itemId', '$userId','$image_path', '1')";   
+            $sql = "INSERT INTO `viewcart_books` (`bookId`, `userId`,`image_path`, `bookQuantity`) VALUES ('$bookId', '$userId','$image_path', '1')";   
             $result = mysqli_query($link, $sql);
             if ($result){
                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Item added in Cart</strong>
+                <strong>Book added in Cart</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -44,14 +44,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     // Notifying the User.
     if(isset($_POST['notify'])){
-        $itemId = $_POST["itemId"];
+        $bookId = $_POST["bookId"];
         // Check whether notifing request already exists or not.
-        $existSql = "SELECT * FROM `notify` WHERE itemId = '$itemId' AND `email`='$email'";
+        $existSql = "SELECT * FROM `notify_books` WHERE `bookId` = '$bookId' AND `email`='$email'";
         $result = mysqli_query($link, $existSql);
         $numExistRows = mysqli_num_rows($result);
         if($numExistRows > 0){
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>Notify Request is already registered. You will receive an email on your registered email id once the item will be available.</strong>
+                <strong>Notify Request is already registered. You will receive an email on your registered email id once the book will be available.</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -59,11 +59,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         // If not then add the request.
         else{
-            $sql = "INSERT INTO `notify` (`itemId`,`email`) VALUES ('$itemId', '$email')";   
+            $sql = "INSERT INTO `notify_books` (`bookId`,`email`) VALUES ('$bookId', '$email')";   
             $result = mysqli_query($link, $sql);
             if ($result){
                 echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Thank You. Your Request is registered. You will receive an email on your registered email id once the item will be available.</strong>
+                <strong>Thank You. Your Request is registered. You will receive an email on your registered email id once the book will be available.</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -73,8 +73,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     // Removing an item from cart.
     if(isset($_POST['removeItem'])) {
-        $itemId = $_POST["itemId"];
-        $sql = "DELETE FROM `viewcart` WHERE `itemId`='$itemId' AND `userId`='$userId'";   
+        $bookId = $_POST["bookId"];
+        $sql = "DELETE FROM `viewcart_books` WHERE `bookId`='$bookId' AND `userId`='$userId'";   
         $result = mysqli_query($link, $sql);
         echo "<script>
                 window.history.back(1);
@@ -89,24 +89,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $address = $_POST["address"];
         $branch = $_POST["branch"];
         $sem = $_POST["sem"];
+        $type = $_POST["type"];
         $amount = $_SESSION["amount"];
         $contents = "";
-        $sql = "SELECT * FROM `viewcart` WHERE userId = $userId";
+        $sql = "SELECT * FROM `viewcart_books` WHERE userId = $userId";
         $result = mysqli_query($link,$sql);
         $rows = mysqli_num_rows($result);
         while($row = mysqli_fetch_assoc($result)){
-            $contents = $contents . $row['itemId'] .".". $row['itemQuantity'] . "*";
+            $contents = $contents . $row['bookId'] .".". $row['bookQuantity'] . "*";
         }
         $contents = rtrim($contents, "*");
-        $sql = "INSERT into orders (userId, name, email,mobile, address,branch, semester, amount,contents) VALUES('$userId','$name', '$email', '$phone', '$address', '$branch', '$sem', '$amount', '$contents')";
+        $sql = "INSERT into orders_books (userId, name, email,mobile, address,branch, semester, amount,contents, type) VALUES('$userId','$name', '$email', '$phone', '$address', '$branch', '$sem', '$amount', '$contents', '$type')";
         $result = mysqli_query($link,$sql);
         $orderId = $link->insert_id;
         if($result){
-            $sql = "DELETE FROM `viewcart` WHERE `userId`='$userId'";
+            $sql = "DELETE FROM `viewcart_books` WHERE `userId`='$userId'";
             $result = mysqli_query($link,$sql);
             unset($_SESSION['amount']);
             echo '<script>alert("Thanks for ordering with us. Your order id is ' .$orderId. '.");
-            window.location.href="http://localhost/Malgadi_Merged/electronics/orders.php";  
+            window.location.href="http://localhost/Malgadi_Merged/books/orders.php";  
             </script>';
             exit();
         }
@@ -114,9 +115,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     //Change Quantity
     if(isset($_POST['quantity']))
     {
-        $itemId = $_POST['itemId'];
+        $bookId = $_POST['bookId'];
         $qty = $_POST['quantity'];
-        $updatesql = "UPDATE `viewcart` SET `itemQuantity`='$qty' WHERE `itemId`='$itemId' AND `userId`='$userId'";
+        echo $bookId;
+        $updatesql = "UPDATE `viewcart_books` SET `bookQuantity`='$qty' WHERE `bookId`='$bookId' AND `userId`='$userId'";
         $updateresult = mysqli_query($link, $updatesql);
     }
 }
@@ -129,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         }
         else{
             $userId = $_SESSION['userId'];
-            $sql = "SELECT * FROM `viewcart` WHERE userId = '$userId'";
+            $sql = "SELECT * FROM `viewcart_books` WHERE userId = '$userId'";
             $result = mysqli_query($link,$sql);
             $cart_quantity = mysqli_num_rows($result);
             if($result){

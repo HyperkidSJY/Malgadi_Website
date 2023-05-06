@@ -19,8 +19,10 @@
     <?php 
         include "../includes/bk-nav.php";
         $category = $_GET['q'];
+        if(isset(($_GET['sm']))){
+            $sem = $_GET['sm'];
+        }
     ?>
-    
     <h2><?php echo $category;?></h2>
     <div class="cards-container">
         <?php 
@@ -28,8 +30,8 @@
                 return trim(addslashes(htmlspecialchars($string)));
             }
         
-        $sql = 'SELECT * FROM items WHERE category= "'.$category.'"';
-        include "./includes/cards.php";
+            $sql = 'SELECT * FROM books WHERE branch= "'.$category.'"';
+            include "./includes/cards.php";
         ?>
             
     </div>

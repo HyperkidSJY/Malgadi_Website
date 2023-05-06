@@ -14,8 +14,8 @@
         $rows = mysqli_num_rows($result);
         $c = 0;
         while($row = mysqli_fetch_assoc($result)){
-            $itemId = $row['itemId'];
-            $sql = "SELECT * from itemimage WHERE itemId=$itemId";
+            $bookId = $row['bookId'];
+            $sql = "SELECT * from bookimage WHERE bookId=$bookId";
             $res = mysqli_query($link,$sql);
             $img_count = $row['imageCount'];
             $path_info = mysqli_fetch_all($res);
@@ -27,7 +27,7 @@
                     <img src="./manage/'.$path.'" alt="">
                 </div>
                 <div class="card-details">
-                    <h5 class="item-name">'.$row['shortName'].'</h5>
+                    <h5 class="item-name">'.$row['name'].'</h5>
                     <div class="item-prices">
                         <p class="item-sp">₹'.$row['sellingPrice'].'</p>
                         <p class="item-op">₹'.$row['originalPrice'].'</p>
@@ -36,9 +36,9 @@
                 </div>';
                 echo '<form action="" class="form-submit">';
                 echo '<input type="hidden" class="path" value="'.$path.'">' ;
-                echo '<input type="hidden" class="itemId" value="'.$itemId.'">' ;
+                echo '<input type="hidden" class="bookId" value="'.$bookId.'">' ;
                 if($row['stockStatus']){
-                        echo '<button type="button" id="addItem" class="item-atoc">ADD TO CART</button>';
+                        echo '<button type="button" id="addBook" class="item-atoc">ADD TO CART</button>';
                     }else{
                         echo '<button type="button" id="notify" class="item-notify">NOTIFY ME</button>';
                     }
@@ -49,7 +49,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">'.$row['fullName'].'</h5>
+                  <h5 class="modal-title" id="exampleModalLabel">'.$row['name'].'</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -95,30 +95,6 @@
                             <h5>Description: </h5><hr>
                             <p><?php echo $row['description']?></p>
                       <?php }?>  
-
-                      <!-- Specifications -->
-                      <?php if($row['specifications']!="-"){
-                            $pieces=explode("*",$row['specifications']);
-                        ?>
-                            <h5>Specifications: </h5><hr>
-                            <ul>
-                                <?php for($i=0;$i<sizeof($pieces);$i++){?>
-                                    <li><?php echo $pieces[$i] ?></li>
-                                <?php }?>
-                            </ul>
-                      <?php }?>  
-
-                      <!-- Kit Contents  -->
-                      <?php if($row['kitContents']!="-"){ 
-                            $pieces=explode("*",$row['kitContents']);
-                        ?>
-                            <h5>Kit Contents: </h5><hr>
-                            <ul>
-                                <?php for($i=0;$i<sizeof($pieces);$i++){?>
-                                    <li><?php echo $pieces[$i] ?></li>
-                                <?php }?>
-                            </ul>
-                      <?php }?>  
                       </div>  
                 </div>
                 <div class="modal-footer">
@@ -132,9 +108,9 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <form action="" class="form-submit">
                         <input type="hidden" class="path" value="<?php echo $path ?>">
-                        <input type="hidden" class="itemId" value="<?php echo $itemId ?>">
+                        <input type="hidden" class="bookId" value="<?php echo $bookId ?>">
                         <?php if($row['stockStatus']){
-                            echo '<button type="button" id="addItem" class="btn btn-success">ADD TO CART</button>';
+                            echo '<button type="button" id="addBook" class="btn btn-success">ADD TO CART</button>';
                         }else{
                             echo '<button type="button" id="notify" class="btn btn-info">NOTIFY ME</button>';
                         }
@@ -155,20 +131,20 @@
     <script type="text/javascript">
         $(document).ready(function() {
             // Send product details in the server
-            $(document).on("click", "#addItem", function(e) {
+            $(document).on("click", "#addBook", function(e) {
                 e.stopPropagation();
                 var $form = $(this).closest(".form-submit");
                 var path = $form.find(".path").val();
-                var itemId = parseInt($form.find(".itemId").val());
-                console.log(itemId);
+                var bookId = parseInt($form.find(".bookId").val());
+                console.log(bookId);
                 console.log(path);
                 $.ajax({
                     url: 'manageCart.php',
                     method: 'post',
                     data: {
-                        addItem : true,
+                        addBook : true,
                         path : path,
-                        itemId : itemId
+                        bookId : bookId
                     },
                     success: function(response){
                         $('#message').html(response);
@@ -179,13 +155,13 @@
             $(document).on("click", "#notify", function(e) {
                 e.stopPropagation();
                 var $form = $(this).closest(".form-submit");
-                var itemId = parseInt($form.find(".itemId").val());
+                var bookId = parseInt($form.find(".bookId").val());
                 $.ajax({
                     url: 'manageCart.php',
                     method: 'post',
                     data: {
                         notify : true,
-                        itemId : itemId
+                        bookId : bookId
                     },
                     success: function(response){
                         $('#message').html(response);

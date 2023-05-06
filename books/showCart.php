@@ -23,21 +23,21 @@ $userId = $_SESSION['userId'];
     <div class="cart-container">
         <div class="item-container">
             <?php
-            $sql = "SELECT * FROM `viewcart` WHERE `userId`= $userId";
+            $sql = "SELECT * FROM `viewcart_books` WHERE `userId`= $userId";
             $result = mysqli_query($link, $sql);
             $counter = 0;
             $totalPrice = 0;
             while ($row = mysqli_fetch_assoc($result)) {
-                $itemId = $row['itemId'];
-                $Quantity = $row['itemQuantity'];
+                $bookId = $row['bookId'];
+                $Quantity = $row['bookQuantity'];
                 $image_path = $row['image_path'];
-                $mysql = "SELECT * FROM `items` WHERE itemId = $itemId";
+                $mysql = "SELECT * FROM `books` WHERE bookId = $bookId";
                 $myresult = mysqli_query($link, $mysql);
                 $myrow = mysqli_fetch_assoc($myresult);
                 $discount = ceil((($myrow['originalPrice']-$myrow['sellingPrice'])/$myrow['originalPrice'])*100);
-                $itemName = $myrow['shortName'];
-                $itemPrice = $myrow['sellingPrice'];
-                $total = $itemPrice * $Quantity;
+                $bookName = $myrow['name'];
+                $bookPrice = $myrow['sellingPrice'];
+                $total = $bookPrice * $Quantity;
                 $counter++;
                 $totalPrice = $totalPrice + $total;
                 $_SESSION['amount'] = $totalPrice;
@@ -47,23 +47,23 @@ $userId = $_SESSION['userId'];
                     <img src="./manage/<?php echo $image_path ?>" alt="">
                 </div>
                 <div class="details">
-                    <h5 class="item-name"><?php echo $myrow['shortName'] ?></h5>
+                    <h5 class="item-name"><?php echo $myrow['name'] ?></h5>
                     <div class="item-prices">
                         <p class="item-sp">₹<?php echo $myrow['sellingPrice'] ?></p>
                         <p class="item-op">₹<?php echo $myrow['originalPrice'] ?></p>
                         <p class="item-discount"><?php echo $discount?>% off</p>
                     </div>
                     <div class="quantity">
-                        <form id="frm<?php echo $itemId; ?>">
-                            <input type="hidden" id="itemId" name="itemId" value="<?php echo $itemId; ?>">
+                        <form id="frm<?php echo $bookId; ?>">
+                            <input type="hidden" id="bookId" name="bookId" value="<?php echo $bookId; ?>">
                             <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field=""><i class="fa fa-minus"></i></button>
-                            <input type="text" id="quantity" name="quantity" onchange="updateCart(<?php echo $itemId; ?>)" value="<?php echo $row['itemQuantity']?>">
+                            <input type="text" id="quantity" name="quantity" onchange="updateCart(<?php echo $bookId; ?>)" value="<?php echo $row['bookQuantity']?>">
                             <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field=""><i class="fa fa-plus"></i></button>
                         </form>
                     </div>
                     <div class="general">
                         <form action="manageCart.php" method="POST">
-                            <input type="hidden" id="itemId" name="itemId" value="<?php echo $itemId; ?>">
+                            <input type="hidden" id="bookId" name="bookId" value="<?php echo $bookId; ?>">
                             <button class="remove" name="removeItem">Remove</button>
                             <p>Total: ₹<?php echo $total ?></p>
                         </form>
@@ -80,7 +80,7 @@ $userId = $_SESSION['userId'];
             <?php } else{ ?>
                 <center>
                     <h5>Your Cart is empty!</h5>
-                    <a href="../electronics/electronics.php"><button class="btn btn-success">Continue Shopping</button></a>
+                    <a href="../books/books.php"><button class="btn btn-success">Continue Shopping</button></a>
                 </center>
 
             <?php } ?>
@@ -128,19 +128,19 @@ $userId = $_SESSION['userId'];
             var quantitiy=0;
             $('.quantity-right-plus').click(function(e){
                 var $div = $(this).closest(".quantity");
-                var itemId = $div.find("#itemId").val();
+                var bookId = $div.find("#bookId").val();
                 var quantity = parseInt($div.find("#quantity").val());  
                 $div.find("#quantity").val(quantity + 1);
-                updateCart(itemId);
+                updateCart(bookId);
             });
 
             $('.quantity-left-minus').click(function(e){
                 var $div = $(this).closest(".quantity");
                 var quantity = parseInt($div.find("#quantity").val());  
-                var itemId = $div.find("#itemId").val();
+                var bookId = $div.find("#bookId").val();
                 if(quantity>1){
                     $div.find("#quantity").val(quantity - 1);
-                    updateCart(itemId);
+                    updateCart(bookId);
                 }
             });
         });

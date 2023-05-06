@@ -35,12 +35,12 @@
         include "../includes/bk-nav.php";
         $keywords = "";
         if(isset($_GET['q'])){
-            header("electronics.php");
+            header("books.php");
             $keywords = $_GET['q'];
         }else{
         }
         if($keywords ==""){
-            header("location: electronics.php");
+            header("location: books.php");
         }
     ?>
     <h2 class="search-heading">Showing Results for <i><?php echo $keywords;?></i></h2>
@@ -59,7 +59,7 @@
                 return trim(addslashes(htmlspecialchars($string)));
             }
         
-        $sql = 'SELECT * FROM items WHERE MATCH(tags) AGAINST("'.$keywords.'" IN BOOLEAN MODE)';
+        $sql = "SELECT * FROM books WHERE `name` LIKE '%$keywords%' || `author` LIKE '%$keywords%'";
         include "./includes/cards.php";
             if($rows == null){?>
                 <script>

@@ -28,13 +28,13 @@ if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
     <?php include("../includes/bk-nav.php"); ?>
     <?php 
         $userId = $_SESSION['userId'];
-        $sql = "SELECT * FROM orders WHERE userId = '$userId' ORDER BY id DESC LIMIT 1";
+        $sql = "SELECT * FROM orders_books WHERE userId = '$userId' ORDER BY id DESC LIMIT 1";
         $result = mysqli_query($link,$sql);
         $row = mysqli_fetch_assoc($result);
         if(mysqli_num_rows($result)==1){
             $address = $row['address'];
-            $branch = $row['branch'];
-            $sem = $row['semester'];
+        }else{
+            $address = "";
         }
     ?>
     <!-- Checkout Modal -->
@@ -43,8 +43,8 @@ if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
         <h2>Enter Your Details:</h2><br>
         <div>
             <form action="manageCart.php" method="post">
-                <!-- <b><label for="address">Address:</label></b> -->
-                <input name="address" placeholder="Address" type="text" value="<?php echo $address?>" required minlength="3" maxlength="500">
+                <b><label for="address" class="m-0">Address:</label></b>
+                <input name="address" id="address" placeholder="Address" type="text" value="<?php echo $address?>" required minlength="3" maxlength="500">
                 <div>
                     <select name="branch" id="branch" required>
                         <option value="0" selected>Select Branch</option>
@@ -70,6 +70,14 @@ if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
                         <option value="8">8</option>
                     </select>
                 </div>
+                <div>
+                    <select name="type" id="type" required>
+                        <option value="BUY" selected>Select Type</option>
+                        <option value="BUY">BUY</option>
+                        <option value="RENT">RENT</option>
+                    </select>
+                </div>
+                
                 
                 <div class="btns">
                     <a href="showCart.php"><button type="button" data-dismiss="modal" class="last-btns">Cancel Order</button></a>
