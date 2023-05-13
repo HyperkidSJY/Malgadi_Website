@@ -101,6 +101,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT into orders (userId, name, email,mobile, address,branch, semester, amount,contents) VALUES('$userId','$name', '$email', '$phone', '$address', '$branch', '$sem', '$amount', '$contents')";
         $result = mysqli_query($link,$sql);
         $orderId = $link->insert_id;
+
+        // Incrementing Order Stats.
+        $month=date('M').date('y');
+        $exists=0;    
+        $st = 'SELECT * FROM stats_ec';
+        $r = mysqli_query($link, $st);
+        while($row = mysqli_fetch_assoc($r)){
+            if($row['month'] == $month){
+                $exists = 1;
+                break;
+            }
+        }
+        if($exists){
+            $statement ="SELECT * FROM stats_ec WHERE month = '$month'";
+            $res = mysqli_query($link,$statement);
+            $row = mysqli_fetch_assoc($res);
+            $orderCount = $row['orders'];
+            $orderCount++;        
+            $statement = "UPDATE stats_ec SET orders=$orderCount WHERE month = '$month'";
+            $res = mysqli_query($link,$statement);
+        }else {    
+            $statement = "INSERT INTO stats_ec(month, orders) VALUES('$month', 1)";
+            $res = mysqli_query($link,$statement);
+        }
         if($result){
             $sql = "DELETE FROM `viewcart` WHERE `userId`='$userId'";
             $result = mysqli_query($link,$sql);

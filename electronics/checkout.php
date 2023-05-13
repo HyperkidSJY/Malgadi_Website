@@ -35,6 +35,8 @@ if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
             $address = $row['address'];
             $branch = $row['branch'];
             $sem = $row['semester'];
+        }else{
+            $address = '';
         }
     ?>
     <!-- Checkout Modal -->
