@@ -33,7 +33,7 @@ if(isset($_POST['contact'])){
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact From</title>
+    <title>Contact Form</title>
     <link rel="stylesheet" href="./css/contact.css" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
@@ -52,17 +52,13 @@ if(isset($_POST['contact'])){
           </p>
 
           <div class="info">
-            <div class="information">
+            <div class="information d-flex align-items-center">
               <img src="./photos/location.png" class="icon" alt="" />
-              <p>Dharmsinh Desai University, Nadiad</p>
+              <p class="m-0">Dharmsinh Desai University, Nadiad</p>
             </div>
-            <div class="information">
+            <div class="information d-flex align-items-center">
               <img src="./photos/email.png" class="icon" alt="" />
-              <p>malgadi.in</p>
-            </div>
-            <div class="information">
-              <img src="./photos/phone.png" class="icon" alt="" />
-              <p>123-456-789</p>
+              <p class="m-0">malgadi.in</p>
             </div>
           </div>
         </div>

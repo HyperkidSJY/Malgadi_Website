@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="contact-info">
         <h3 class="title">Special Order is For..</h3>
         <p class="text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis soluta, quaerat sit vero saepe veniam, nesciunt ab tempore porro itaque maxime, fugiat atque possimus quia quas nisi doloremque ipsa est.
+        At Malgadi, your satisfaction is our top priority. We take pride in providing exceptional customer service and ensuring that you receive the products you need.
         </p>
       </div>
       <div class="contact-form">

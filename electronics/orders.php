@@ -45,7 +45,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
     if($rows==0){
        echo '<center><div>
             <p class="text-black"> You have not ordered anything yet.<p>
-            <a href="showCart.php"><button class="btn btn-primary">Go to Cart</button></a>
+            <a href="showCart.php"><button class="btn btn-success">Go to Cart</button></a>
         </div></center>';
         exit();
     }
@@ -76,6 +76,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
             <div id="collapseOne<?php echo $c ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                     <ul class="list-group">
+                        <li class="list-group-item"><b>Order ID:&nbsp;</b><?php echo $row['id']; ?></li>
                         <li class="list-group-item"><b>Placed on:&nbsp;</b><?php echo $row['date']; ?></li>
                         <li class="list-group-item"><b>Email :&nbsp;</b><a href="mailto:<?php echo $row['email']; ?>"><?php echo $row['email']; ?></a></li>
                         <li class="list-group-item"><b>Phone :&nbsp;</b><a href="tel:<?php echo $row['mobile']; ?>"><?php echo $row['mobile']; ?></a></li>

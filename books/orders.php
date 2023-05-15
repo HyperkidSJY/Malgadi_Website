@@ -68,7 +68,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
             <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne<?php echo $c ?>" aria-expanded="true" aria-controls="collapseOne">
                 <div class="order-heading">
                     <b><?php echo $c+1; ?>.</b>
-                    Order <?php echo $row['status'].' '.'on'.' '. $row['d_date']; ?>
+                    Order <b><?php echo $row['status']?></b> on <?php echo $row['d_date']; ?>
                     <i class="fa fa-angle-down"></i>
                 </div>
             </div>
@@ -76,6 +76,7 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
             <div id="collapseOne<?php echo $c ?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                 <div class="card-body">
                     <ul class="list-group">
+                        <li class="list-group-item"><b>Order ID:&nbsp;</b><?php echo $row['id']; ?></li>
                         <li class="list-group-item"><b>Placed on:&nbsp;</b><?php echo $row['date']; ?></li>
                         <li class="list-group-item"><b>Email :&nbsp;</b><a href="mailto:<?php echo $row['email']; ?>"><?php echo $row['email']; ?></a></li>
                         <li class="list-group-item"><b>Phone :&nbsp;</b><a href="tel:<?php echo $row['mobile']; ?>"><?php echo $row['mobile']; ?></a></li>

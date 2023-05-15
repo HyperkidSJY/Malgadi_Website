@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/about.css">
-  <title>My Website</title>
+  <title>About | Malgadi</title>
 </head>
 
 <body>
@@ -30,7 +30,7 @@
           <li><h2>A platform from which you can buy necessary engineering books and components at best quality and guaranteed lowest price. </h2></li>
         </ul>
         
-        <a href="#" class="cta">More about Malgadi </a>
+        <a href="./social/" class="cta">More about Malgadi </a>
       </div>
     </div>
   </section>
@@ -42,9 +42,10 @@
     <div class="services container">
       <div class="service-top">
         <h2 class="section-title">PRODUCTS <span>AND </span> PRICE<span> In </span> Malgadi</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum deleniti maiores pariatur assumenda quas
-          magni et, doloribus quod voluptate quasi molestiae magnam officiis dolorum, dolor provident atque molestias
-          voluptatum explicabo!</p>
+        <h1>YOU DEMAND WE DELIVER</h1>
+        <p>
+          Get electronics and books at lowest rates as compared to market rates.
+        </p>
       </div>
       <div class="service-bottom">
         <div class="service-item">
@@ -66,12 +67,12 @@
           <p>Market price : 800 Rs</p>
           <p>MALADGI’S PRICE : 650 Rs </p>
         </div>
-        <div class="service-item">
+        <!-- <div class="service-item">
           <h2>EG Kit</h2>
           <div><img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTIinonCd7_vbKe0iITGx-vI5ain5Q07CKSOq-zKCU5c-ObmqHaGR15iOdL6TKv7ceCQuCgBoZnOAqh1K7HOLECwoluHzp3fZcZ44BUi2By&usqp=CAE"/></div>
           <P>Market price : 900 Rs</P>
           <P>MALADGI’S PRICE : 800 Rs</P>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -87,10 +88,6 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Web Development Team</h1>
-            <h2>Work:</h2>
-            <p>     
-
-            </p>
           </div>
           <div class="project-img">
             <img src="https://www.aceinfoway.com/blog/wp-content/uploads/2020/12/Myths-Associated-with-Hiring-a-Dedicated-Web-Development-Team.jpg" alt="img">
@@ -99,8 +96,6 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Management Team</h1>
-            <h2>Work:</h2>
-            <p></p>
           </div>
           <div class="project-img">
             <img src="https://www.orangescrum.com/blog/wp-content/uploads/2019/09/Project-Management-Tips-on-How-to-Motivate-Your-Remote-Team-1-1.png" alt="img">
@@ -109,8 +104,6 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Graphic Design Team</h1>
-            <h2>Work:</h2>
-            <p></p>
           </div>
           <div class="project-img">
             <img src="https://cdn.dribbble.com/users/272353/screenshots/11818480/media/f5fa280fef04c01bca638cb7a05fb13b.png?compress=1&resize=400x300&vertical=top" alt="img">
@@ -119,8 +112,6 @@
         <div class="project-item">
           <div class="project-info">
             <h1>Social Media Handling Team</h1>
-            <h2>Work:</h2>
-            <p></p>
           </div>
           <div class="project-img">
             <img src="https://blog.influenceandco.com/hubfs/Blog_Pictures/socialmediaengagement_blogimage.png" alt="img">
@@ -152,15 +143,14 @@
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
           <div class="contact-info">
             <h1>Email</h1>
-            <h2>info@gmail.com</h2>
-            <h2>abcd@gmail.com</h2>
+            <h2>ready2help.malgadi@gmail.com</h2>
           </div>
         </div>
         <div class="contact-item">
           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
           <div class="contact-info">
             <h1>Address</h1>
-            <h2>Fatikchhari, Chittagong, Bangladesh</h2>
+            <h2>MVJJ+33W, College Rd, Chalali, Nadiad, Gujarat 387001</h2>
           </div>
         </div>
       </div>

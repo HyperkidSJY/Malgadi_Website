@@ -11,7 +11,7 @@ html,body{
     height: 100%;
     width: 100%;
     place-items: center;
-    /* background: -webkit-linear-gradient(left, #c83853, white, #c83853); */
+    /* background: -webkit-linear-gradient(left, #24292f, white, #24292f); */
 }
 .container{
     max-width: 390px !important;
@@ -77,7 +77,7 @@ html,body{
     z-index: 0;
     border-radius: 5px;
     transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    background: #c83853;
+    background: #24292f;
 }
 input{
     color: black
@@ -125,7 +125,7 @@ input[type="submit"]{
     transition: all 0.4s ease;
 }
 .forminner form .field input:focus{
-    border-color: #c83853;
+    border-color: #24292f;
 }
 
 .forminner form .passlink{
@@ -133,8 +133,10 @@ input[type="submit"]{
 }
 .forminner form .passlink a,
 .forminner form .signuplink a{
-    color: #c83853;
-    text-decoration: none;
+    color: #24292f;
+    font-weight: bold;
+    text-decoration: underline;
+    /* text-decoration: none; */
 }
 
 .forminner form .signuplink{
@@ -155,5 +157,5 @@ form .field input[type="submit"]{
     padding-left: 0px;
     border: none;
     cursor: pointer;
-    background: #c83853;
+    background: #24292f;
 }

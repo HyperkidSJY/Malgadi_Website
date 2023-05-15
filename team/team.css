@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 img{
     /* height: 250px; */
     /* width: 250px; */
@@ -11,9 +12,10 @@ img{
 .te-heading{
     text-align: center; 
     padding: 30px;
+    font-weight: bold;
 }
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     /* background-image: url("https://tse2.mm.bing.net/th?id=OIP.LZYpGCblhfh48N1psMv9DQHaEK&pid=Api&P=0"); */
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,13 +39,15 @@ body{
     border-radius: 50px; 
     border: 2px solid #575580;
     box-shadow: 0 0 18px rgb(97, 92, 92);
-    height: calc(100% - 37px);
     transition: .5s;
     padding-block: 10px;
 }
 
 .team-item img {
     transition: .5s;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
 }
 
 .team-item:hover img {
@@ -140,7 +144,7 @@ h1 {
   margin-left: -80px;
   padding-top: 20px;
   padding-left: 80px;
-  /* width:min-content; */
+  /* width:fit-content; */
   height: 150px;
   box-sizing: border-box;
   font-size: 20px;
@@ -167,6 +171,9 @@ h1 {
   transition-duration: 180ms;
 }
 .te-menu-item:nth-child(8) {
+  transition-duration: 180ms;
+}
+.te-menu-item:nth-child(9) {
   transition-duration: 180ms;
 }
 
@@ -214,6 +221,10 @@ h1 {
 .te-menu-open:checked ~ .te-menu-item:nth-child(8) {
   transition-duration: 690ms;
   transform: translate3d(660px, 0, 0);
+}
+.te-menu-open:checked ~ .te-menu-item:nth-child(9) {
+  transition-duration: 790ms;
+  transform: translate3d(770px, 0, 0);
 }
 
 /* 
@@ -327,6 +338,7 @@ $light-purple: #C784DD; */
 }
 #te-nav_large{
   display: block;
+  height: 100px;
 }
 #te-nav_small{
   display: none;
@@ -356,6 +368,6 @@ $light-purple: #C784DD; */
 }
 
 
-#te-yr-2020, #te-yr-2019, #te-yr-2018, #te-yr-2017, #te-yr-2016{
+#te-yr-2020, #te-yr-2019, #te-yr-2018, #te-yr-2017, #te-yr-2016, #te-yr-2015{
   display: none;
 }

@@ -42,11 +42,13 @@
                     <div class="field">
                         <input type="password" value="<?php if (isset($_COOKIE["pass"])){echo $_COOKIE["pass"];}?>" placeholder="Password" required name="password" id="password">
                     </div>
-                    <div class="passlink"><a href="#">Forgot Password</a></div>
+                    <!-- <div class="passlink"><a href="#">Forgot Password</a></div> -->
                     <div class="field">
                         <input type="submit" value="Login" name="login">
                     </div>
                     <div class="signuplink">Not a member?&nbsp;<a href="#">Signup Now</a></div>
+                    <!-- Message  -->
+                    <p class="m-2 message text-center text-danger"></p>
                 </form>
                
                 <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="signup">
@@ -74,7 +76,8 @@
                     <div class="field">
                         <input type="tel" placeholder="Mobile no." minlength="10" maxlength="10" required name="mobile" id="mobile">
                     </div>
-
+                    <!-- Message  -->
+                    <p class="m-2 message text-center text-danger"></p>
                     <div class="field">
                         <input type="submit" value="Signup" name="signup">
                     </div>
@@ -143,13 +146,23 @@ if (isset($_POST['login'])) {
 
                     header("location: index.php");
                 } else {
-                    echo"<script>alert('Invalid Credentials');
-                        window.history.back(1);</script>";
+                    echo"<script>
+
+                        const mess = document.querySelector('.message');
+                        mess.innerText = 'Invalid Credentials';
+                    
+                    </script>";
+                    
+                    
                 }
             }
         } else {
-            echo"<script>alert('Email not registered');
-                window.history.back(1);</script>";
+            echo"<script>
+
+            const mess = document.querySelector('.message');
+            mess.innerText = 'Email not registered';
+        
+        </script>";
         }
     }
 }
@@ -172,9 +185,10 @@ if (isset($_POST['signup'])) {
         $result = mysqli_query($link, $existSql);
         $numExistRows = mysqli_num_rows($result);
         if($numExistRows > 0){
-            echo '<script>alert("Mobile already registered.");
-            window.history.back(1);
-            </script>';
+            echo "<script>
+                const mess = document.querySelector('.message');
+                mess.innerText = 'Mobile already registered';
+            </script>";
             exit();
         }
         // Check whether Email exists.
@@ -183,9 +197,10 @@ if (isset($_POST['signup'])) {
         $numExistRows = mysqli_num_rows($result);
         if($numExistRows > 0){
         // $showError = '<div style="position:relative; bottom: 25px; color:red; text-align:center;">Username already exists.</div>';
-            echo '<script>alert("Email already registered.");
-            window.history.back(1);
-            </script>';
+            echo "<script>
+                const mess = document.querySelector('.message');
+                mess.innerText = 'Email already registered';
+            </script>";
             exit();
         }
         else{
@@ -206,9 +221,12 @@ if (isset($_POST['signup'])) {
             }
             else{
                 // $showError = '<div style="position:relative; bottom: 25px; color:red;">Passwords do not match.</div>';
-                echo '<script>alert("Passwords do not match");
-                window.history.back(1);
-                </script>';
+                echo "<script>
+
+                const mess = document.querySelector('.message');
+                mess.innerText = 'Passwords do not match';
+            
+            </script>";
             }
         }
     }

@@ -94,7 +94,7 @@ body{
     padding: 8px 10px;
 }
 .web-team a{
-    text-decoration: underline;
+    font-weight: bold !important;
 }
 @media screen and (max-width:770px){
     .ec-footer{

@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-    <title>Team</title>
+    <title>Team | Malgadi</title>
 </head>
 <body>
   <div id="te-nav_large">
@@ -21,13 +20,22 @@
         <span class="te-hamburger te-hamburger-2"></span>
         <span class="te-hamburger te-hamburger-3"></span>
       </label>
+
+      <!-- <a href="#" class="te-menu-item" onclick="show(2021);">2021-22</a>
+      <a href="#" class="te-menu-item" onclick="display(members_2020_1, 2020, 1); display(members_2020_2, 2020, 2); show(2020);">2020-21</a>
+      <a href="#" class="te-menu-item" onclick="display(members_2019_1, 2019, 1); display(members_2019_2, 2019, 2); show(2019);">2019-20</a>
+      <a href="#" class="te-menu-item" onclick="display(members_2018_1, 2018, 1); show(2018);">2018-19</a>
+      <a href="#" class="te-menu-item" onclick="display(members_2017_1, 2017, 1); display(members_2017_2, 2017, 2); show(2017);">2017-18</a>
+      <a href="#" class="te-menu-item" onclick="display(members_2016_1, 2016, 1); display(members_2016_2, 2016, 2); show(2016);">2016-17</a>
+      <a href="#" class="te-menu-item" onclick="display(members_2015_1, 2015, 1); show(2015);">2015-16</a> -->
       
       <a href="#" class="te-menu-item" onclick="show(2021);"> <i>2021-22</i> </a>
-      <a href="#" class="te-menu-item" onclick="display(members_2020_1, 2020, 1); display(members_2020_2, 2020, 2); show(2020);"> <i>2020-21</i> </a>
-      <a href="#" class="te-menu-item" onclick="display(members_2019_1, 2019, 1); display(members_2019_2, 2019, 2); show(2019);"> <i>2019-20</i> </a>
-      <a href="#" class="te-menu-item" onclick="display(members_2018_1, 2018, 1); display(members_2018_2, 2018, 2); show(2018);"> <i>2018-19</i> </a>
-      <a href="#" class="te-menu-item" onclick="display(members_2017_1, 2017, 1); display(members_2017_2, 2017, 2); show(2017);"> <i>2017-18</i> </a>
-      <a href="#" class="te-menu-item" onclick="display(members_2016_1, 2016, 1); display(members_2016_2, 2016, 2); show(2016);"> <i>2016-17</i> </a>
+      <a href="#" class="te-menu-item" onclick="show(2020);"> <i>2020-21</i> </a>
+      <a href="#" class="te-menu-item" onclick="show(2019);"> <i>2019-20</i> </a>
+      <a href="#" class="te-menu-item" onclick="show(2018);"> <i>2018-19</i> </a>
+      <a href="#" class="te-menu-item" onclick="show(2017);"> <i>2017-18</i> </a>
+      <a href="#" class="te-menu-item" onclick="show(2016);"> <i>2016-17</i> </a>
+      <a href="#" class="te-menu-item" onclick="show(2015);"> <i>2015-16</i> </a>
     </nav>
     
     
@@ -61,12 +69,21 @@
     <br>
     <nav class="te-nav">
       <ul>
-          <li><a href="#" onclick="show(2021);">2021-22</a></li>
+          <!-- <li><a href="#" onclick="show(2021);">2021-22</a></li>
           <li><a href="#" onclick="display(members_2020_1, 2020, 1); display(members_2020_2, 2020, 2); show(2020);">2020-21</a></li>
           <li><a href="#" onclick="display(members_2019_1, 2019, 1); display(members_2019_2, 2019, 2); show(2019);">2019-20</a></li>
-          <li><a href="#" onclick="display(members_2018_1, 2018, 1); display(members_2018_2, 2018, 2); show(2018);">2018-19</a></li>
+          <li><a href="#" onclick="display(members_2018_1, 2018, 1); show(2018);">2018-19</a></li>
           <li><a href="#" onclick="display(members_2017_1, 2017, 1); display(members_2017_2, 2017, 2); show(2017);">2017-18</a></li>
           <li><a href="#" onclick="display(members_2016_1, 2016, 1); display(members_2016_2, 2016, 2); show(2016);">2016-17</a></li>
+          <li><a href="#" onclick="display(members_2015_1, 2015, 1); show(2015);">2015-16</a></li> -->
+
+          <li><a href="#" onclick="show(2021);">2021-22 </a></li>
+          <li><a href="#" onclick="show(2020);">2020-21 </a></li>
+          <li><a href="#" onclick="show(2019);">2019-20 </a></li>
+          <li><a href="#" onclick="show(2018);">2018-19 </a></li>
+          <li><a href="#" onclick="show(2017);">2017-18 </a></li>
+          <li><a href="#" onclick="show(2016);">2016-17 </a></li>
+          <li><a href="#" onclick="show(2015);">2015-16</a></li>
         </ul>
     </nav>
   </div>
@@ -87,44 +104,49 @@
     <div class="container-xxl pb-3">
       <div class="container-fluid">
         <div id="te-yr-2021">
-          <h1 class="te-heading">Team of Electronics 2021-22</h1>
+          <h1 class="te-heading">Team of Electronics 2021-22</h1><br>
           <div id="te-main-2021-1" class="row g-4"></div>
           <h1 class="te-heading">Team of Book 2021-22</h1>
-          <div id="te-main-2021-2" class="row g-4"></div>
+          <div id="te-main-2021-2" class="row gv-4"></div>
         </div>
         <div id="te-yr-2020">
-          <h1 class="te-heading">Team of Electronics 2020-21</h1>
+          <h1 class="te-heading">Team of Electronics 2020-21</h1><br>
           <div id="te-main-2020-1" class="row g-4"></div>
           <h1 class="te-heading">Team of Book 2020-21</h1>
           <div id="te-main-2020-2" class="row g-4"></div>
         </div>
 
         <div id="te-yr-2019">
-          <h1 class="te-heading">Team of Electronics 2019-20</h1>
+          <h1 class="te-heading">Team of Electronics 2019-20</h1><br>
           <div id="te-main-2019-1" class="row g-4"></div>
           <h1 class="te-heading">Team of Book 2019-20</h1>
           <div id="te-main-2019-2" class="row g-4"></div>
         </div>
 
         <div id="te-yr-2018">
-          <h1 class="te-heading">Team of Electronics 2018-19</h1>
+          <h1 class="te-heading">Team of Electronics 2018-19</h1><br>
           <div id="te-main-2018-1" class="row g-4"></div>
-          <h1 class="te-heading">Team of Book 2018-19</h1>
-          <div id="te-main-2018-2" class="row g-4"></div>
+          <!-- <h1 class="te-heading">Team of Book 2018-19</h1>
+          <div id="te-main-2018-2" class="row g-4"></div> -->
         </div>
 
         <div id="te-yr-2017">
-          <h1 class="te-heading">Team of Electronics 2017-18</h1>
+          <h1 class="te-heading">Team of Electronics 2017-18</h1><br>
           <div id="te-main-2017-1" class="row g-4"></div>
           <h1 class="te-heading">Team of Book 2017-18</h1>
           <div id="te-main-2017-2" class="row g-4"></div>
         </div>
 
         <div id="te-yr-2016">
-          <h1 class="te-heading">Team of Electronics 2016-17</h1>
+          <h1 class="te-heading">Team of Electronics 2016-17</h1><br>
           <div id="te-main-2016-1" class="row g-4"></div>
           <h1 class="te-heading">Team of Book 2016-17</h1>
           <div id="te-main-2016-2" class="row g-4"></div>
+        </div>
+
+        <div id="te-yr-2015">
+          <h1 class="te-heading">Team of Organization 2015-16</h1><br>
+          <div id="te-main-2015-1" class="row g-4"></div>
         </div>
     </div>
   </div>
