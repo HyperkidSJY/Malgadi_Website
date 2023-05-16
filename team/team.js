@@ -6,7 +6,7 @@ var members_2021_1 = [
                  team : "Web Development"
                },
                { photo : "../team/img/diya_web.jpg",
-                 name : "Diya",
+                 name : "Diya Motwani",
                  team : "Web Development"
                 },
                 { photo : "../team/img/shiwangee_mgt.jpg",

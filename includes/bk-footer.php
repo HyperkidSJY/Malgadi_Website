@@ -41,7 +41,7 @@
             <p class="cpy">&#169; 2022 Malgadi</p>
 
         </footer>
-        <p class="web-team">Developed and Powered by <a href="../Web Team/teampage.html">@"TeamName"</a></p>
+        <p class="web-team">Developed and Powered by <a href="../Web Team/teampage.html">@Web_2k22-23</a></p>
        
     </div>
 </body>

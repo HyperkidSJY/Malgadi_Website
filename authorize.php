@@ -160,7 +160,7 @@ if (isset($_POST['login'])) {
             echo"<script>
 
             const mess = document.querySelector('.message');
-            mess.innerText = 'Email not registered';
+            mess.innerText = 'Invalid Credentials';
         
         </script>";
         }
