@@ -15,6 +15,6 @@ if (isset($_COOKIE["email"]) AND isset($_COOKIE["pass"])){
     setcookie("pass", '', time() - (3600));
 }
 echo '<script>
-window.location.href="http://localhost/Malgadi_Merged/index.php"; 
+window.location.href="./index.php"; 
 </script>';
 ?>

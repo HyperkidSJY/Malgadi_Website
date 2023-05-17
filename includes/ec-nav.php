@@ -43,7 +43,7 @@
         </ul>
         <div class="my-nav-items">
             <ul>
-                <li class="item"><a href="../electronics/electronics.php">Home</a></li>
+                <li class="item"><a href="../electronics/">Home</a></li>
                 <li class="item"><a href="../electronics/showCart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
                 <li class="item"><a href="../electronics/orders.php"><i class="fa fa-truck fa-flip-horizontal"></i>Your Orders</a></li>
                 <li class="item"><a href="../electronics/specialOrder.php">Special Order</a></li>
@@ -64,7 +64,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li><a href="../electronics/electronics.php">Home</a></li>
+                <li><a href="../electronics/">Home</a></li>
                 <li><a href="../electronics/showCart.php">Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                 <li><a href="../electronics/orders.php">Your Orders<i class="fa fa-truck"></i></a></li>
                 <li><a href="../electronics/specialOrder.php">Special Order</a></li>

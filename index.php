@@ -58,8 +58,8 @@ if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true){
           Get electronics and books at lowest rates as compared to market rates.
         </p>
         <div class="btns-home">
-          <a href="./electronics/electronics.php"><button type="button"><span></span>ELECTRONICS</button></a>
-          <a href="./books/books.php"><button type="button"><span></span>BOOKS</button></a>
+          <a href="./electronics/"><button type="button"><span></span>ELECTRONICS</button></a>
+          <a href="./books/"><button type="button"><span></span>BOOKS</button></a>
         </div>
         
       </div>

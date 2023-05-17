@@ -213,7 +213,7 @@ if (isset($_POST['signup'])) {
                     setcookie("email", $email, time() + (86400 * 30)); 
                     setcookie("pass", $password, time() + (86400 * 30));
                     echo '<script>confirm("You are successfully Registered!");
-                    window.location.href="http://localhost/Malgadi_Merged/home/authorize.php"; 
+                    window.location.href="./index.php"; 
                     </script>';
                 }else{
                     echo mysqli_error($link);

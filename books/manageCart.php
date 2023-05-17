@@ -6,7 +6,7 @@ include '../dbConnect/config.php';?>
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
-        echo '<script>window.location.href="http://localhost/Malgadi_Merged/authorize.php";  
+        echo '<script>window.location.href="../authorize.php";  
         </script>'; 
         exit();
     }
@@ -131,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = mysqli_query($link,$sql);
             unset($_SESSION['amount']);
             echo '<script>alert("Thanks for ordering with us. Your order id is ' .$orderId. '.");
-            window.location.href="http://localhost/Malgadi_Merged/books/orders.php";  
+            window.location.href="./orders.php";  
             </script>';
             exit();
         }

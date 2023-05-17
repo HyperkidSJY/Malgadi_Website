@@ -2,7 +2,7 @@
 include '../dbConnect/config.php';
 session_start();
 if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
-    echo '<script>window.location.href="http://localhost/Malgadi_Merged/authorize.php";  
+    echo '<script>window.location.href="../authorize.php";  
     </script>'; 
     exit();
 } ?>
@@ -13,7 +13,7 @@ if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout | MyFoodKart</title>
+    <title>Checkout | Malgadi</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="phone.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

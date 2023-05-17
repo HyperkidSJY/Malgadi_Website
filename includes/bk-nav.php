@@ -51,7 +51,7 @@
         </ul>
         <div class="my-nav-items">
             <ul>
-                <li class="item"><a href="../books/books.php">Home</a></li>
+                <li class="item"><a href="../books/">Home</a></li>
                 <li class="item"><a href="../books/showCart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a></li>
                 <li class="item"><a href="../books/orders.php"><i class="fa fa-truck fa-flip-horizontal"></i>Your Orders</a></li>
                 <li class="item"><a href="../books/specialOrder.php">Special Order</a></li>
@@ -72,7 +72,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li><a href="../books/books.php">Home</a></li>
+                <li><a href="../books/">Home</a></li>
                 <li><a href="../books/showCart.php">Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
                 <li><a href="../books/orders.php">Your Orders<i class="fa fa-truck"></i></a></li>
                 <li><a href="../books/specialOrder.php">Special Order</a></li>

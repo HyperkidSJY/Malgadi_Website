@@ -2,7 +2,7 @@
 include '../dbConnect/config.php';
 session_start();
 if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
-    echo '<script>window.location.href="http://localhost/Malgadi_Merged/authorize.php";  
+    echo '<script>window.location.href="../authorize.php";  
         </script>';
     exit();
 }

@@ -2,7 +2,7 @@
 include '../dbConnect/config.php';
 session_start();
 if(!(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==true)){
-    echo '<script>window.location.href="http://localhost/Malgadi_Merged/authorize.php";  
+    echo '<script>window.location.href="../authorize.php";  
     </script>'; 
     exit();
 }
@@ -80,7 +80,7 @@ $userId = $_SESSION['userId'];
             <?php } else{ ?>
                 <center>
                     <h5>Your Cart is empty!</h5>
-                    <a href="../electronics/electronics.php"><button class="btn btn-success">Continue Shopping</button></a>
+                    <a href="../electronics/"><button class="btn btn-success">Continue Shopping</button></a>
                 </center>
 
             <?php } ?>

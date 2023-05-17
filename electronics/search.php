@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search for '<?php echo $_GET['q'];?>'</title>
     <link rel="stylesheet" href="./css/cards.css">
 </head>
 
@@ -35,12 +35,12 @@
         include "../includes/ec-nav.php";
         $keywords = "";
         if(isset($_GET['q'])){
-            header("electronics.php");
+            header("index.php");
             $keywords = $_GET['q'];
         }else{
         }
         if($keywords ==""){
-            header("location: electronics.php");
+            header("location: index.php");
         }
     ?>
     <h2 class="search-heading">Showing Results for <i><?php echo $keywords;?></i></h2>
