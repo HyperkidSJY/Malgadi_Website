@@ -22,9 +22,9 @@
             <div class="social-links">
                 <h3>Connect with us on: </h3>
                 <div class="links">
-                    <a href=""><i class="fa fa-facebook-f"></i></a>
-                    <a href=""><i class="fa fa-instagram"></i></a>
-                    <a href=""><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/channel/UC37swT-hpPGfXfg01CTPOBQ"><i class="fa fa-youtube-play"></i></a>
+                    <a href="https://www.instagram.com/malgadi_ddu/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/malgadi-ddu/mycompany/"><i class="fa fa-linkedin"></i></a>
                 </div>
             </div>
             <p class="des">Malgadi is a for the students, by the student's venture. It is a non-profitable organization

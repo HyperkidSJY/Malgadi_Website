@@ -43,33 +43,26 @@
 .c1{
     object-fit: cover;
 }
-
-@media screen and (min-width:1600px){
+.m-carousel{
+    display: none;
+}
+.carousel-item img{
+    object-fit: fill;
+}
+/* @media screen and (min-width:1600px){
     .c2{
         object-fit: contain;
     }
-}
+}*/
 @media screen and (max-width:860px){
-    .c2{
-        object-fit: contain;
+    .l-carousel{
+        display: none !important;
+    }
+    .m-carousel{
+        display: block;
     }
 }
-@media screen and (max-width:725px){
-    .caption-1 p{
-        font-size: 35px;
-    }
-    .caption-1 h2{
-        font-size: 52px;
-    }
-}
-@media screen and (max-width:634px){
-    .caption-1 p{
-        font-size: 30px;
-    }
-    .caption-1 h2{
-        font-size: 48px;
-    }
-}
+/*
 @media screen and (max-width: 620px){
     .c2{
         object-fit: cover;
@@ -84,12 +77,6 @@
     }
 }
 @media screen and (max-width:543px){
-    .caption-1 p{
-        font-size: 25px;
-    }
-    .caption-1 h2{
-        font-size: 43px;
-    }
     .c2{
         object-fit: contain;
         object-position: left;
@@ -112,12 +99,6 @@
     
 }
 @media screen and (max-width:454px){
-    .caption-1 p{
-        font-size: 22px;
-    }
-    .caption-1 h2{
-        font-size: 40px;
-    }
     .c2{
         object-fit: fill;
         object-position: left;
@@ -125,7 +106,6 @@
     }
 }
 @media screen and (max-width:444px){
-   
     .c2{
         object-fit: fill;
         object-position: left;
@@ -133,23 +113,9 @@
     }
 }
 @media screen and (max-width:400px){
-    .caption-1 p{
-        font-size: 20px;
-    }
-    .caption-1 h2{
-        font-size: 38px;
-    }
     .c2{
         object-fit: fill;
         object-position: left;
         width: 50rem;
     }
-}
-@media screen and (max-width:362px){
-    .caption-1 p{
-        font-size: 18px;
-    }
-    .caption-1 h2{
-        font-size: 36px;
-    }
-}
+} */

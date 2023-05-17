@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electronics - Malgadi</title>
     <link rel="stylesheet" href="./css/electronics.css">
-    <!-- <link rel="stylesheet" href="../css/loader.css"> -->
+    <link rel="stylesheet" href="../css/loader.css">
     
 </head>
 <body>
     <?php
     require '../includes/ec-nav.php'; ?>
-    <!-- <div class="ec-loader">
-    </div> -->
+    <div class="ec-loader">
+    </div>
     <div id="container" class="v-class">
         <div id="homeCarousel" class="carousel slide l-carousel" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -25,7 +25,7 @@
                     <img class="d-block single c1" src="./photos/1.png" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block single c2" src="./photos/2.png" alt="Second slide">
+                    <img class="d-block single c2" src="./photos/3.png" alt="Second slide">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
